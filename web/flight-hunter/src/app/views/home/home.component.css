@@ -1,0 +1,11 @@
+.toolbar {
+    height: 80px;
+    place-content: center;
+    font-size: 2rem;
+}
+
+.footer {
+    height: 80px;
+    place-content: center;
+    font-size: 2rem;
+}

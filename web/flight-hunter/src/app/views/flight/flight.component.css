@@ -1,0 +1,83 @@
+.banner-principal {
+    width: 100%;
+    height: 740px;
+    background-image: url('../../../assets/images/banner-principal.jpg');
+    overflow: hidden;
+}
+
+.example-card {
+    max-width: 400px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.search-card {
+    padding-top: 60px;
+    display: flex;
+    padding-bottom: 200px;
+    justify-content: center;
+}
+
+.search-card .title {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+}
+
+.result-card {
+    padding-top: 60px;
+    display: flex;
+    padding-bottom: 200px;
+    justify-content: center;
+}
+
+.result-card .title {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+}
+
+::ng-deep .mat-card-header-text {
+    width: 100%;
+}
+
+.result-card .card {
+    min-width: 400px;
+}
+
+.example-margin {
+    margin: 0 0px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}

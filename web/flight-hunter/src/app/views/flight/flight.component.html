@@ -1,0 +1,64 @@
+<mat-progress-bar *ngIf="showProgressBar" mode="indeterminate" class="example-margin"></mat-progress-bar>
+<div class="banner-principal">
+    <div class="search-card" 
+        fxFlex="50%"
+        fxFlex.lt-sm="100%">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title class="title">Vamos começar nossa caçada pela passagem mais barata</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <form class="example-form" [formGroup]="flightSearchForm">
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Aeroporto de origem</mat-label>
+                        <input matInput formControlName="airportFrom" name="airportFrom" placeholder="Ex: GRU">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Aeroporto de destino</mat-label>
+                        <input matInput formControlName="airportTo" name="airportTo" placeholder="Ex: OPO">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="example-full-width">
+                        <mat-label>Moeda</mat-label>
+                        <input matInput formControlName="currency" name="currency" placeholder="Ex: BRL">
+                    </mat-form-field>
+                </form>
+                <div *ngIf="showErrorMessageAboutInformations" class="alert alert-danger">
+                    Origem ou destino precisam ser preenchidos.
+                    <span class="example-spacer"></span>
+                    <button mat-icon-button color="warn" aria-label="close" (click)="closeAlert()">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-raised-button color="primary" (click)="getLowestPriceFlight()">Começar a caçada</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="result-card" 
+        fxFlex="50%"
+        fxFlex.lt-sm="100%">
+        <mat-card class="card example-card" *ngIf="showResultCard">
+            <mat-card-header>
+                <mat-card-title class="title">
+                    Encontramos!
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div>
+                    <p>Dados da origem</p>
+                    <p>Aeroporto: {{lowestPriceFlight.flyFrom}}</p>
+                    <p>Cidade: {{lowestPriceFlight.cityFrom}}</p>
+                    <p>País: {{lowestPriceFlight.countryFrom.name}}</p>
+                </div>
+                <div>
+                    <p>Dados do destino</p>
+                    <p>Aeroporto: {{lowestPriceFlight.flyTo}}</p>
+                    <p>Cidade: {{lowestPriceFlight.cityTo}}</p>
+                    <p>País: {{lowestPriceFlight.countryTo.name}}</p>
+                </div>
+                <p>Preço: {{lowestPriceFlight.price | currency:currencyHtml:'symbol'}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
