@@ -1,0 +1,12 @@
+version: '3'
+services:
+  api:
+    image: "caiolepetit/flight-hunter-api"
+    ports:
+      - "8080:8080"
+  web:
+    image: "caiolepetit/flight-hunter"
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
