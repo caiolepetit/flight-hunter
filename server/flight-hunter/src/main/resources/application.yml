@@ -1,0 +1,6 @@
+rest:
+  sky-picker:
+    url: https://api.skypicker.com
+logging:
+  level:
+    com.lepetit.flighthunter: DEBUG
