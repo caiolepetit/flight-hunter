@@ -1,9 +1,9 @@
-FROM registry.b2w.io/atlas/openjdk8:latest
+FROM openjdk:8-jre-alpine
 
-ENV APP_NAME b2w-credit-api-1.0.0.jar
+ENV APP_NAME flight-hunter-0.0.1.jar
 
-COPY ["b2w-credit-api-1.0.0.jar", "/application/"]
+COPY ["flight-hunter-0.0.1.jar", "/application/"]
 
 WORKDIR  /application
 
-ENTRYPOINT java $JAVA_OPTS $EXTRA_PROPERTIES -jar $APP_NAME
+ENTRYPOINT java -jar $APP_NAME
