@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@Builder
 @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class FlightDetails {

@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Response {
     @JsonProperty(value = "data")
