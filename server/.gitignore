@@ -1,5 +1,6 @@
 HELP.md
 target/
+flight-hunter/docker/flight-hunter-0.0.1.jar
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
