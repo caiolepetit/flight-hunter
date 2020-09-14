@@ -19,13 +19,17 @@ jobs:
       - name: Executing upload
         uses: actions/upload-artifact@v2
         with:
-          name: Package
+          name: package
           path: staging
 
   docker_java:
     needs: build_java
     runs-on: ubuntu-latest
     steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: package
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
