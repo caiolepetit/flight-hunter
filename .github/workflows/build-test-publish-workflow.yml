@@ -15,11 +15,11 @@ jobs:
       - name: Run the Maven verify phase
         run: mvn -B verify --file server/flight-hunter/pom.xml
       - name: Uploading generated jar
-        - run: mkdir staging && cp target/*.jar staging
-        - uses: actions/upload-artifact@v2
-          with:
-            name: Package
-            path: staging
+      - run: mkdir staging && cp target/*.jar staging
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: staging
 
   docker:
     runs-on: ubuntu-latest
