@@ -23,7 +23,7 @@ jobs:
           path: staging
 
   docker_java:
-    needs: build
+    needs: build_java
     runs-on: ubuntu-latest
     steps:
       - name: Set up QEMU
