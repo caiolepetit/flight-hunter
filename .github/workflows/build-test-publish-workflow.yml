@@ -3,7 +3,7 @@ name: Workflow application
 on: [push]
 
 jobs:
-  build:
+  build_java:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +22,7 @@ jobs:
           name: Package
           path: staging
 
-  docker:
+  docker_java:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -39,7 +39,9 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
+          context: .
+          file: ./server/flight-hunter/docker/
           push: true
-          tags: user/app:latest
+          tags: caiolepetit/flight-hunter-api:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
